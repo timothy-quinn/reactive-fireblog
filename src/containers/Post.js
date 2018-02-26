@@ -1,5 +1,7 @@
 import React from 'react';
 import { Dimmer, Loader } from 'semantic-ui-react';
+import { convertMarkdownToHtml } from '../lib/md';
+import { getPostData } from '../lib/fire';
 
 class Post extends React.Component {
   constructor(props) {
@@ -14,15 +16,25 @@ class Post extends React.Component {
   componentDidMount() {
     if (this.props.match) {
       if (this.props.match.params.slug) {
-        // fetch the post based on the slug
+        // fetch the post based on the slug, and do it as a promise.
+
+        // when the promise succeeds, change the state.
 
         // if we didn't find a post, redirect to 404 not found
 
-        this.setState({
-          postTitle: this.props.match.params.slug,
-          postContent: '',
-          isLoading: false,
-        });
+        let postData = getPostData(this.props.match.params.slug);
+
+        if (postData) {
+          this.setState({
+            postTitle: postData.postTitle,
+            postContent: postData.postContent,
+            isLoading: false,
+          });
+        } else {
+          // redirect to 404 not found
+        }
+
+        
       }
     }
   }
