@@ -1,4 +1,20 @@
+This project is an experiment with React and Firebase. It is a basic blog that offers markdown defined blog entries, a combined home and about page, and an authenticated editor page for creating or modifying posts.
+
+The following are yet to be completed (in order of importance):
+
+* Implement retrieving posts from firestore
+* Implement rendering posts based on URL slug
+* Add disqus comments
+* Define all deployment configuration in a separate config file
+* Add analytics from Firebase
+* Add authentication via Firebase
+* Add Editor page
+* Edit Posts
+* Add New Posts
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+
+
 
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
