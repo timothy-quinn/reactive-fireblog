@@ -1,5 +1,6 @@
 import React from 'react';
 import { Dimmer, Loader } from 'semantic-ui-react';
+import PostHeader from '../components/PostHeader';
 import { convertMarkdownToHtml } from '../lib/md';
 import { getPostData } from '../lib/fire';
 
@@ -49,7 +50,7 @@ class Post extends React.Component {
     }
     return (
       <div>
-        <h2>{this.state.postTitle}</h2>
+        <PostHeader title={this.state.postTitle} />
       </div>
     )
   }
